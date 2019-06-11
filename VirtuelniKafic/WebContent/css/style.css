@@ -4,4 +4,35 @@ h1{
 	color: red;
 }
 
+.bojiSlovaUPlavo{
+	color: blue;
+	font-family: "Tahoma";
+}
 
+#formaRegistracija{
+	
+	width: 400px;
+	height: 270px;
+	border: 2px solid red;
+	background-color: #e35862;
+	text-align: center;
+	padding-top: 10px;
+	border-radius: 15px;
+}
+
+#formaRegistracija input{
+	
+	width: 80%;
+	heigh: 10%;
+	border-radius: 8px;
+	
+}
+
+#formaRegistracija input[type = "submit"]{
+	
+	color: red;
+}
+
+#formaRegistracija input[type = "submit"]:hover{
+	background-color: yellow;
+}

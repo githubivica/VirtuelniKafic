@@ -3,18 +3,41 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>Registracija</title>
+	<link 
+		rel = "stylesheet"
+		type= "text/css"
+		href = "css/style.css"
+	>
 	</head>
 	
-	
 	<body>
-		<h1>Ovo je strana za registraciju</h1>
+		<h1 class= "bojiSlovaUPlavo">Ovo je strana za registraciju</h1>
 		
 		<a href = "index.html">Prebaci me na index stranu</a>
 		
 		<a href = "index.html"><input type ="submit" value="nazad"></a>
 	
-		<a href = "index.html"><img src ="slike/back.jpg"/></a>
+		<a href = "index.html"><img src ="slike/back.jpg" style="width:30px; heigh:30px;"/></a>
+		<br>
+		<br>
 		
+		<form id=formaRegistracija action= "#">
+			User name:<br>
+			<input type= "text" placeholder="User name"><br><br>
+			<input type= "text" placeholder="Password"><br><br>
+			<input type= "text" placeholder="Repeat password"><br><br>
+			
+			<input type= "submit" value="Sign up!!!" style="width:20%;"><br><br>
+			
+			<input type= "checkbox" ><br>
+			<input type= "radio" ><br>
+			<select>
+				<option>Nis</option>
+				<option>Beograd</option>
+				<option>Novi Sad</option>
+			</select>
+			
+		</form>
 	
 	</body>
 </html>
