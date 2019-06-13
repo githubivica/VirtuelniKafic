@@ -20,12 +20,13 @@
 		<a href = "index.html"><img src ="slike/back.jpg" style="width:30px; heigh:30px;"/></a>
 		<br>
 		<br>
-		
-		<form id=formaRegistracija action= "#">
+					<!-- PutanjaServletaZaRegistraciju - uzeta iz registracionog servleta -->
+						
+		<form id=formaRegistracija action="PutanjaServletaZaRegistraciju" method="get">
 			User name:<br>
-			<input type= "text" placeholder="User name"><br><br>
-			<input type= "text" placeholder="Password"><br><br>
-			<input type= "text" placeholder="Repeat password"><br><br>
+			<input type= "text" placeholder="User name" name = "userName"><br><br>
+			<input type= "password" placeholder="Password" name = "password"><br><br>
+			<input type= "password" placeholder="Repeat password" name = "repeatPassword"><br><br>
 			
 			<input type= "submit" value="Sign up!!!" style="width:20%;"><br><br>
 			
