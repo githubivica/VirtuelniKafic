@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.RegistracijaDAO;
 import validacija.ValidacijaZaRegistraciju;
 
 /**
@@ -26,6 +27,8 @@ public class RegistracioniServlet extends HttpServlet {		//registracioni servlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		RegistracijaDAO registracijaDao = new RegistracijaDAO();
+		
 		System.out.println("Pozdrav iz servleta");
 		
 		String userName = request.getParameter("userName");		//userName uzet iz klase registracija name = "userName"
@@ -37,10 +40,14 @@ public class RegistracioniServlet extends HttpServlet {		//registracioni servlet
 		System.out.println("Vas repeatPassword je " + repeatPassword);
 		
 		boolean provera = ValidacijaZaRegistraciju.proveraPasworda(password, repeatPassword);
-		
+		double novcanik = 2000;
 		if (provera) {
-			//upisi usera u bazu
-			response.sendRedirect("index.html");		//view salje response
+			boolean upisanUBazu = registracijaDao.upisiUseraUBazu(userName, password, novcanik); //ubaci usera u bazu
+				if (upisanUBazu) {				//ako je upisan
+					response.sendRedirect("index.html");
+				}else {							//ako nije upisan
+					response.sendRedirect("registracija.html");	
+				}
 		}
 		else {
 			response.sendRedirect("registracija.html");		//view salje response
