@@ -27,7 +27,7 @@ public class RegistracijaDAO {
 			user.setPassword(password);
 			user.setNovcanik(novcanik);
 		
-		Session session = sf.openSession();
+		Session session = sf.openSession(); 
 			session.beginTransaction();
 			
 		try {
