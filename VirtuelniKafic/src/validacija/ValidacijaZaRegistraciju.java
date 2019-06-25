@@ -9,12 +9,10 @@ public class ValidacijaZaRegistraciju {
 		}
 		else {
 			return false;
-		}
-		
-		
+		}	
 	}
 	
-	
+	// pu daLiJeAdmin
 	
 	
 }

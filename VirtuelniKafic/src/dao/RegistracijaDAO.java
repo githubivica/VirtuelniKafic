@@ -4,8 +4,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-
+import model.Rola;
 import model.User;
+import validacija.ValidacijaZaRegistraciju;
 
 public class RegistracijaDAO {
 
@@ -27,6 +28,17 @@ public class RegistracijaDAO {
 			user.setPassword(password);
 			user.setNovcanik(novcanik);
 		
+		Rola rola;
+		
+		if (ValidacijaZaRegistraciju.daLiJeAdmin(userName, password)) {
+			rola = Rola.ADMINISTRATOR;
+		}else {
+			rola = Rola.KORISNIK;
+		}
+			
+		user.setRola(rola);	
+			
+			
 		Session session = sf.openSession(); 
 			session.beginTransaction();
 			

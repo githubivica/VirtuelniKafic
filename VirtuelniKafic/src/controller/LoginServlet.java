@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.LoginDAO;
+import model.Rola;
 import model.User;
 
 @WebServlet(description = "Servlet za logovanje", urlPatterns = { "/LoginServlet" })
@@ -30,10 +31,10 @@ public class LoginServlet extends HttpServlet {
 				boolean proveriPassword = loginDAO.daLiPasswordOdgovaraUseru(userName, password);
 					if (proveriPassword) {	
 						user = loginDAO.vratiUsera(userName);
-						if (user.getRola().getUloga().equals("administrator")) {
-							//posalji ga na admin page
+						if (user.getRola().equals(Rola.ADMINISTRATOR)) {
+							response.sendRedirect("view/administrator.jsp");
 						}else {
-							//posalji ga na user page
+							response.sendRedirect("view/user.jsp");
 						}
 					}else {
 						response.sendRedirect("login.html");
